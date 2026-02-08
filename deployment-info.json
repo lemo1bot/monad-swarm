@@ -1,0 +1,11 @@
+{
+  "network": "monad",
+  "deployer": "0x14C8520cD3E5D519F6E6e3bf6214454331f8194c",
+  "timestamp": "2026-02-08T17:58:30.632Z",
+  "contracts": {
+    "AgentRegistry": "0xEA3E918fed9450024cC3473434F77A494f41c051",
+    "CoordinationHub": "0x04fE38d449201F897b29210FE874c725Ec307F8F",
+    "TreasuryVault": "0x583662774Fe24BCDdf207F2Cf5Fe7d55D498EC37",
+    "SwarmToken": "0x7E6d3885E44387baD560a43E486062Edd132C003"
+  }
+}

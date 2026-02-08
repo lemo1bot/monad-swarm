@@ -5,56 +5,52 @@ async function main() {
 
     const [deployer] = await hre.ethers.getSigners();
     console.log("Deploying with account:", deployer.address);
-    console.log("Account balance:", (await deployer.provider.getBalance(deployer.address)).toString());
+    console.log("Account balance:", (await deployer.getBalance()).toString());
     console.log("");
 
     // Deploy AgentRegistry
     console.log("1️⃣  Deploying AgentRegistry...");
     const AgentRegistry = await hre.ethers.getContractFactory("AgentRegistry");
     const agentRegistry = await AgentRegistry.deploy();
-    await agentRegistry.waitForDeployment();
-    const agentRegistryAddress = await agentRegistry.getAddress();
-    console.log("✅ AgentRegistry deployed to:", agentRegistryAddress);
+    await agentRegistry.deployed();
+    console.log("✅ AgentRegistry deployed to:", agentRegistry.address);
     console.log("");
 
     // Deploy CoordinationHub
     console.log("2️⃣  Deploying CoordinationHub...");
     const CoordinationHub = await hre.ethers.getContractFactory("CoordinationHub");
-    const coordinationHub = await CoordinationHub.deploy(agentRegistryAddress);
-    await coordinationHub.waitForDeployment();
-    const coordinationHubAddress = await coordinationHub.getAddress();
-    console.log("✅ CoordinationHub deployed to:", coordinationHubAddress);
+    const coordinationHub = await CoordinationHub.deploy(agentRegistry.address);
+    await coordinationHub.deployed();
+    console.log("✅ CoordinationHub deployed to:", coordinationHub.address);
     console.log("");
 
     // Deploy TreasuryVault
     console.log("3️⃣  Deploying TreasuryVault...");
     const TreasuryVault = await hre.ethers.getContractFactory("TreasuryVault");
     const treasuryVault = await TreasuryVault.deploy();
-    await treasuryVault.waitForDeployment();
-    const treasuryVaultAddress = await treasuryVault.getAddress();
-    console.log("✅ TreasuryVault deployed to:", treasuryVaultAddress);
+    await treasuryVault.deployed();
+    console.log("✅ TreasuryVault deployed to:", treasuryVault.address);
     console.log("");
 
     // Deploy SwarmToken
     console.log("4️⃣  Deploying SwarmToken...");
     const SwarmToken = await hre.ethers.getContractFactory("SwarmToken");
     const swarmToken = await SwarmToken.deploy(
-        treasuryVaultAddress,
+        treasuryVault.address,
         deployer.address, // Team wallet
         deployer.address  // Liquidity pool (will be updated after nad.fun launch)
     );
-    await swarmToken.waitForDeployment();
-    const swarmTokenAddress = await swarmToken.getAddress();
-    console.log("✅ SwarmToken deployed to:", swarmTokenAddress);
+    await swarmToken.deployed();
+    console.log("✅ SwarmToken deployed to:", swarmToken.address);
     console.log("");
 
     // Summary
     console.log("📋 DEPLOYMENT SUMMARY");
     console.log("====================");
-    console.log("AgentRegistry:    ", agentRegistryAddress);
-    console.log("CoordinationHub:  ", coordinationHubAddress);
-    console.log("TreasuryVault:    ", treasuryVaultAddress);
-    console.log("SwarmToken (SWARM):", swarmTokenAddress);
+    console.log("AgentRegistry:    ", agentRegistry.address);
+    console.log("CoordinationHub:  ", coordinationHub.address);
+    console.log("TreasuryVault:    ", treasuryVault.address);
+    console.log("SwarmToken (SWARM):", swarmToken.address);
     console.log("");
 
     // Save deployment info
@@ -63,10 +59,10 @@ async function main() {
         deployer: deployer.address,
         timestamp: new Date().toISOString(),
         contracts: {
-            AgentRegistry: agentRegistryAddress,
-            CoordinationHub: coordinationHubAddress,
-            TreasuryVault: treasuryVaultAddress,
-            SwarmToken: swarmTokenAddress
+            AgentRegistry: agentRegistry.address,
+            CoordinationHub: coordinationHub.address,
+            TreasuryVault: treasuryVault.address,
+            SwarmToken: swarmToken.address
         }
     };
 
