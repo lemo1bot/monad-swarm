@@ -11,6 +11,19 @@
 - **Deadline:** February 15, 2026, 23:59 PM ET
 - **Moltbook Agent:** USDCAgentVaultBot_Foriada
 - **Faucet Claimed:** 50 MON ✅
+- **Status:** DEPLOYED TO MONAD MAINNET ✅
+
+## 🚀 Deployed Contracts (Monad Mainnet)
+
+| Contract | Address | Chain ID |
+|----------|---------|----------|
+| **AgentRegistry** | `0xEA3E918fed9450024cC3473434F77A494f41c051` | 143 |
+| **CoordinationHub** | `0x04fE38d449201F897b29210FE874c725Ec307F8F` | 143 |
+| **TreasuryVault** | `0x583662774Fe24BCDdf207F2Cf5Fe7d55D498EC37` | 143 |
+| **SwarmToken (SWARM)** | `0x7E6d3885E44387baD560a43E486062Edd132C003` | 143 |
+
+**Deployer:** `0x14C8520cD3E5D519F6E6e3bf6214454331f8194c`  
+**Deployed:** February 8, 2026
 
 ## 🏗️ Project Overview
 

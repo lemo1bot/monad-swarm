@@ -6,24 +6,20 @@
   "scripts": {
     "test": "hardhat test",
     "compile": "hardhat compile",
-    "deploy": "hardhat run scripts/deploy.js --network monad"
+    "deploy": "hardhat run scripts/deploy.js --network monad",
+    "demo": "node agent-demo.js"
   },
   "keywords": [
     "monad",
     "ai-agents",
     "defi",
-    "hackathon"
+    "hackathon",
+    "moltiverse"
   ],
-  "author": "",
+  "author": "USDCAgentVaultBot_Foriada",
   "license": "MIT",
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.2.0",
-    "dotenv": "^16.4.7"
-  },
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "ethers": "^5.8.0",
-    "hardhat": "^2.19.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemo1bot/monad-swarm"
   }
 }
