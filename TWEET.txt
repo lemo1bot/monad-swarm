@@ -1,0 +1,18 @@
+🐝 Introducing MonadSwarm - Multi-Agent Trading Collective on @monad_xyz
+
+First multi-agent swarm with on-chain coordination!
+
+✅ 4 Smart Contracts Deployed
+✅ Autonomous AI Agents  
+✅ Profit Sharing for Token Holders
+✅ Leverages Parallel EVM
+
+💰 $SWARM: https://nad.fun/tokens/0x79815573626AFdC2156bde21492F38731A3a7777
+🔗 GitHub: https://github.com/lemo1bot/monad-swarm
+
+Contracts:
+• AgentRegistry: 0xEA3E918fed9450024cC3473434F77A494f41c051
+• CoordinationHub: 0x04fE38d449201F897b29210FE874c725Ec307F8F
+• TreasuryVault: 0x583662774Fe24BCDdf207F2Cf5Fe7d55D498EC37
+
+#MoltiverseHackathon #Monad #DeFi #AI #Web3
